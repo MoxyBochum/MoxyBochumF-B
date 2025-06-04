@@ -3,17 +3,58 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Infos – MoxyBochum</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ℹ️ Infos</title>
   <style>
-    body { background: #9b59b6; color: white; font-family: Gill Sans MT, sans-serif; padding: 2em; }
-    a { color: #ffccff; }
+    body {
+      font-family: "Gill Sans MT", "Gill Sans", "Gill Sans MS", sans-serif;
+      background: linear-gradient(135deg, #ec008c, #6a1b9a);
+      color: white;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      display: inline-block;
+      text-decoration: none;
+    }
+    a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
   </style>
 </head>
 <body>
   <h1>ℹ️ Infos</h1>
-  <ul>
-    <li><a href="docs/infos/infos-beispiel.pdf" target="_blank">infos-beispiel.pdf</a></li>
-  </ul>
-  <p><a href="index.html">⬅ Zurück zur Startseite</a></p>
+  <ul id="pdf-list"></ul>
+  <script>
+    fetch("https://api.github.com/repos/MoxyBochum/MoxyBochumFandB/contents/docs/infos")
+      .then(res => res.json())
+      .then(files => {
+        const list = document.getElementById("pdf-list");
+        files.forEach(function(file) {
+          if (file.name.endsWith(".pdf")) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `docs/infos/` + file.name;
+            a.target = "_blank";
+            a.textContent = file.name;
+            li.appendChild(a);
+            list.appendChild(li);
+          }
+        });
+      });
+  </script>
 </body>
 </html>
