@@ -6,87 +6,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MoxyBochum F&B</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Gill+Sans+MT&display=swap');
   body {
-    font-family: 'Gill Sans MT', 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-family: 'Gill Sans MT', 'Gill Sans', Calibri, sans-serif;
     background: linear-gradient(135deg, #9b59b6, #e91e63);
     color: white;
-    margin: 0; padding: 0;
-  }
-  header {
     padding: 20px;
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-    background: rgba(0,0,0,0.3);
+    margin: 0;
   }
-  main {
-    padding: 20px;
-  }
+  h1 { text-align: center; }
+  ul { list-style: none; padding: 0; }
+  li { margin: 10px 0; }
   a {
-    color: #ff80ab;
+    color: #ffccff;
+    font-size: 1.2em;
     text-decoration: none;
   }
   a:hover {
     text-decoration: underline;
   }
-  .pdf-list {
-    margin-top: 20px;
-  }
-  .instagram {
-    margin-top: 40px;
-    text-align: center;
-  }
-  .instagram a {
-    color: #ff80ab;
-    font-weight: bold;
-  }
-  .qr-code {
-    margin-top: 30px;
-    text-align: center;
-  }
-  img.qr-img {
-    width: 150px;
-    height: 150px;
-    border: 3px solid white;
-    border-radius: 10px;
-  }
 </style>
 </head>
 <body>
-<header>MoxyBochum F&B</header>
-<main>
-  <h2>Speise- und Getränkekarten (PDF)</h2>
-  <div class="pdf-list" id="pdfList">
-    <!-- PDF-Links werden hier eingefügt -->
-  </div>
-  <div class="instagram">
-    <p>Folge uns auf <a href="https://www.instagram.com/moxybochum?igsh=MWVmN284b2EzMjltNQ==" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-  </div>
-  <div class="qr-code">
-    <p>QR-Code zum Scannen:</p>
-    <img class="qr-img" src="qr-code.png" alt="QR Code zur MoxyBochum F&B Website" />
-  </div>
-</main>
-
-<script>
-// PDFs automatisch laden aus /docs (Liste statisch, da GitHub Pages kann kein serverseitiges Skript)
-// Manuell musst du hier die PDFs ergänzen oder GitHub Actions einrichten, wenn dynamisch
-
-const pdfs = [
-  "docs/sample-menu.pdf"
-  // Füge hier weitere PDF-Dateien hinzu
-];
-
-const pdfList = document.getElementById('pdfList');
-pdfs.forEach(pdf => {
-  const link = document.createElement('a');
-  link.href = pdf;
-  link.textContent = pdf.split('/').pop();
-  link.target = '_blank';
-  pdfList.appendChild(link);
-  pdfList.appendChild(document.createElement('br'));
-});
-</script>
+  <h1>MoxyBochum F&B</h1>
+  <h2>Kategorien</h2>
+  <ul>
+    <li><a href="speisen.html">🍽 Speisen</a></li>
+    <li><a href="getraenke.html">🍹 Getränke</a></li>
+    <li><a href="zusatzstoffe.html">📄 Zusatzstoffe & Allergene</a></li>
+    <li><a href="infos.html">ℹ️ Infos</a></li>
+  </ul>
 </body>
 </html>
