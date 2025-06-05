@@ -1,21 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Getränke | Beverage</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Getraenke | Beverages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+<style>
+  body {
+    font-family: "Gill Sans MT", "Gill Sans", "Gill Sans MS", sans-serif;
+    background: linear-gradient(135deg, #ec008c, #6a1b9a);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 2rem;
+  }
+  a {
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    background: white;
+    color: #6a1b9a;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 320px;
+  }
+  a:hover {
+    background: #f3e5f5;
+  }
+  .footer {
+    margin-top: 3rem;
+  }
+  @media (max-width: 600px) {
+    body {
+      padding: 1rem;
+      font-size: 14px;
+    }
+    a {
+      width: 90%;
+      padding: 0.75rem 1rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
 </head>
 <body>
-  <header>
-    <h1>Getränke | Beverage</h1>
-    <a href="index.html">← Zurück zur Startseite</a>
-  </header>
-
-  <main>
-    <ul>
-      <li><a href="getraenke/MoxyDrinks.pdf" target="_blank">Moxy Drinks</a></li>
- <div class="footer">
+  <h1>Getraenke | Beverages</h1>
+  <p><a href="getraenke/MoxyDrinks.pdf" target="_blank">MoxyDrinks</a></p>
+  <div class="footer">
     <a href="index.html">🔙 Zurück zur Startseite</a>
   </div>
 </body>
